@@ -24,7 +24,7 @@ export default function CrearCuenta() {
       grabarDatos(data.email, data.password, data.nombres, data.apellidos, data.telefono);
 
       // Limpiar el formulario después de enviar
-      reset();
+      // reset();
 
     };   //2
 
@@ -37,6 +37,7 @@ export default function CrearCuenta() {
           toast.success(res.data.message, { autoClose: 1000 });
 
           navigate("/datosAceptados", { state: { user: res.data.user, msg: res.data.message, subtitulo: res.data.messageValid} });
+          reset()
 
       } catch (err) {
 
